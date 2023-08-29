@@ -5,7 +5,6 @@ pipeline {
 		GITGUARDIAN_API_KEY = credentials('GITGUARDIAN_API_KEY')
 		
 	
-		
 	}
     stages {
 	  stage('SCM') {
