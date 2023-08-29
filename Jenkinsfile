@@ -2,6 +2,7 @@ pipeline {
     agent any 
 	environment {
 		def scannerHome = tool 'Sonar-scanner';
+		GITGUARDIAN_API_KEY = credentials('GITGUARDIAN_API_KEY')
 		
 	
 		
@@ -14,7 +15,15 @@ pipeline {
 	  }
 	    
 	
-	    
+	             stage('Secrets Management-GitGuardian Scan') {
+            agent {
+                docker { image 'gitguardian/ggshield:latest'
+		       args '-i --entrypoint='}
+            }
+            steps {
+                sh 'ggshield secret scan ci'
+            }
+        } 
 	    
 	    
 
