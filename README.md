@@ -1,3 +1,3 @@
 #### DVWA-webinar
-This is a Devsecops Test project with DVWA installed
+This is a Devsecops Test project with DVWA 
 
